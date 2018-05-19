@@ -12,7 +12,7 @@ var users = require('./routes/users');
 onerror(app);
 
 // global middlewares
-app.use(views(__dirname +'views', {
+app.use(views('views', {
   map:{html:'ejs'}
 }));
 app.use(require('koa-bodyparser')());
