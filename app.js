@@ -6,7 +6,8 @@ var app = require('koa')()
   ejs=require('ejs');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var front = require('./routes/front');
+var end = require('./routes/end');
 
 // error handler
 onerror(app);
@@ -30,6 +31,7 @@ app.use(require('koa-static')(__dirname + '/public'));
 
 // routes definition
 app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
+app.use(front.routes(), front.allowedMethods());
+app.use(end.routes(), end.allowedMethods());
 
 module.exports = app;
