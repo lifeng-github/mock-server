@@ -11,7 +11,7 @@ router.get('/', function *(next) {
 
 router.get('/project', function *(next) {
   yield this.render('project-front', {
-    title: 'Hello World Koa!'
+    projectList: mock.projectList
   });
 });
 
