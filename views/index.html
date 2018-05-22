@@ -54,39 +54,19 @@
                     <th>项目名称</th>
                     <th>项目描述</th>
                     <th>项目负责人</th>
+                    <th>创建时间</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Default</td>
-                    <td>Defaultson</td>
-                    <td>def@somemail.com</td>
-                </tr>      
-                <tr >
-                    <td>Success</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Danger</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>Info</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr>
-                    <td>Warning</td>
-                    <td>Refs</td>
-                    <td>bo@example.com</td>
-                </tr>
-                <tr>
-                    <td>Active</td>
-                    <td>Activeson</td>
-                    <td>act@example.com</td>
-                </tr>
+                <% for (var project of projectList) {%>
+                    <tr>
+                        <td><%=project.name %></td>
+                        <td><%=project.description%></td>
+                        <td><%=project.userName%></td>
+                        <td><%=project.createDate%></td>
+                    </tr> 
+                <%}%>
+                
             </table>
         </div>
     </div>

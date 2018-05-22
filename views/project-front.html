@@ -34,10 +34,15 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/front">MOCK-FRONT</a></li>
-                    <li class="breadcrumb-item active">PROJECT-LIST</li>
+                    <li class="breadcrumb-item active">项目列表</li>
                 </ol>
             </nav>
         </div>
+
+        <div class="rows mb-2">
+            <button type="button" class="btn btn-success">新增项目</button>
+        </div>
+
         <div class="rows mb-8">
             <form class="form-inline">
                 <div class="form-group mb-2">
@@ -54,39 +59,18 @@
                     <th>项目名称</th>
                     <th>项目描述</th>
                     <th>项目负责人</th>
+                    <th>创建时间</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Default</td>
-                    <td>Defaultson</td>
-                    <td>def@somemail.com</td>
-                </tr>      
-                <tr >
-                    <td>Success</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Danger</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>Info</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr>
-                    <td>Warning</td>
-                    <td>Refs</td>
-                    <td>bo@example.com</td>
-                </tr>
-                <tr>
-                    <td>Active</td>
-                    <td>Activeson</td>
-                    <td>act@example.com</td>
-                </tr>
+                <% for (var project of projectList) {%>
+                    <tr data-project-id="<%=project.id%>">
+                        <td><%=project.name %></td>
+                        <td><%=project.description%></td>
+                        <td><%=project.userName%></td>
+                        <td><%=project.createDate%></td>
+                    </tr> 
+                <%}%>
             </table>
         </div>
     </div>

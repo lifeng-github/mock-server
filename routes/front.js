@@ -1,10 +1,11 @@
 var router = require('koa-router')();
+var mock = require('../mock/front-project-data').data;
 
 router.prefix('/front');
 
 router.get('/', function *(next) {
   yield this.render('project-front', {
-    title: 'Hello World Koa!'
+    projectList: mock.projectList
   });
 });
 

@@ -33,5 +33,6 @@ app.use(require('koa-static')(__dirname + '/public'));
 app.use(index.routes(), index.allowedMethods());
 app.use(front.routes(), front.allowedMethods());
 app.use(end.routes(), end.allowedMethods());
+//app.use(end.routes(), end.allowedMethods());
 
 module.exports = app;
