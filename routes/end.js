@@ -1,20 +1,20 @@
 var router = require('koa-router')();
 
 router.prefix('/end');
-router.get('/', function *(next) {
-  yield this.render('project-end', {
+router.get('/', async (ctx, next) =>{
+  await ctx.render('project-end', {
     title: 'Hello World Koa!'
   });
 });
 
-router.get('/project', function *(next) {
-  yield this.render('project-end', {
+router.get('/project', async (ctx, next) =>{
+  await ctx.render('project-end', {
     title: 'Hello World Koa!'
   });
 });
 
-router.get('/interface', function *(next) {
-  yield this.render('interface-end', {
+router.get('/interface', async (ctx, next) =>{
+  await ctx.render('interface-end', {
     title: 'Hello World foo!'
   });
 });

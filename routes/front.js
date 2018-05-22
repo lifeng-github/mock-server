@@ -3,22 +3,23 @@ var mock = require('../mock/front-project-data').data;
 
 router.prefix('/front');
 
-router.get('/', function *(next) {
-  yield this.render('project-front', {
+router.get('/', async (ctx, next) =>{
+  await ctx.render('project-front', {
     projectList: mock.projectList
   });
 });
 
-router.get('/project', function *(next) {
-  yield this.render('project-front', {
+router.get('/project', async (ctx, next)=> {
+  await ctx.render('project-front', {
     projectList: mock.projectList
   });
 });
 
-router.get('/interface', function *(next) {
-  yield this.render('interface-front', {
+router.get('/interface', async (ctx, next)=> {
+  await ctx.render('interface-front', {
     title: 'Hello World foo!'
   });
 });
+
 
 module.exports = router;
